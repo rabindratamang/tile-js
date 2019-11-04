@@ -48,6 +48,7 @@
 
             for(var y = 0; y < mapH; y++){
                 for(var x = 0; x < mapW; x++){
+                    //index for gameMap[]
                     switch(gameMap[((y*mapW)+x)]){
                         case 0:
                             ctx.fillStyle = '#999999';
@@ -58,7 +59,11 @@
                     ctx.fillRect(x*tileW,y*tileH,tileW, tileH)
                 }
             }
-        }
+
+            ctx.fillStyle = "#ff0000";
+            ctx.fillText("FPS:" + frameLastSecond, 10 , 20);
+            requestAnimationFrame(drawGame)
+;        }
     </script>
     <script src="/js/main.js"></script>
 </body>
